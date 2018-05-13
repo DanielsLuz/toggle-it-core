@@ -7,6 +7,10 @@
     "test": "jest"
   },
   "author": "DanielsLuz <danielluz1995@gmail.com>",
+  "repository": {
+    "url": "github.com/DanielsLuz/toggle-it-core",
+    "type": "git"
+  },
   "license": "MIT",
   "private": false,
   "devDependencies": {
