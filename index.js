@@ -1,12 +1,13 @@
-function ToggleIt(args = {}) {
+function ToggleIt({ features = {}, options = { default: true } } = {}) {
+
   const on = (featureName, customCheck) => {
     if(typeof customCheck === "function") {
       return customCheck();
     } else {
-      if(args.hasOwnProperty(featureName)) {
-        return args[featureName];
+      if(features.hasOwnProperty(featureName)) {
+        return features[featureName];
       } else {
-        return true;
+        return options.default;
       }
     }
   }
