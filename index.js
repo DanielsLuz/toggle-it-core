@@ -1,4 +1,4 @@
-function ToggleIt({ features = {}, options = { default: true } } = {}) {
+function ToggleItCore({ features = {}, options = { default: true } } = {}) {
 
   const on = (featureName, customCheck) => {
     if(typeof customCheck === "function") {
@@ -17,4 +17,4 @@ function ToggleIt({ features = {}, options = { default: true } } = {}) {
   }
 }
 
-module.exports = ToggleIt;
+module.exports = ToggleItCore;

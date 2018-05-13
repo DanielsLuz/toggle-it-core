@@ -1,8 +1,8 @@
-const ToggleIt = require('../index.js');
+const ToggleItCore = require('../index.js');
 
 describe('.on', () => {
   test('returns true given a true feature', () => {
-    const toggleIt = ToggleIt({
+    const toggleIt = ToggleItCore({
       features: {
         feature1: true,
       }
@@ -12,7 +12,7 @@ describe('.on', () => {
   });
 
   test('returns false given a false feature', () => {
-    const toggleIt = ToggleIt({
+    const toggleIt = ToggleItCore({
       features: {
         feature1: false,
       }
@@ -23,13 +23,13 @@ describe('.on', () => {
 
   describe('given an unknown feature', () => {
     test('defaults to true', () => {
-      const toggleIt = ToggleIt();
+      const toggleIt = ToggleItCore();
 
       expect(toggleIt.on('unknownFeature')).toBe(true);
     });
 
     test('returns de given default', () => {
-      const toggleIt = ToggleIt({
+      const toggleIt = ToggleItCore({
         options: {
           default: false,
         }
@@ -42,7 +42,7 @@ describe('.on', () => {
   describe('given a function', () => {
     test('overrides the initial value', () => {
 
-      const toggleIt = ToggleIt({
+      const toggleIt = ToggleItCore({
         features: {
           feature1: false,
         }

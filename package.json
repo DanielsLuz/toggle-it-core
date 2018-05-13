@@ -1,7 +1,7 @@
 {
-  "name": "toggle-it",
+  "name": "toggle-it-core",
   "version": "0.0.1",
-  "description": "Implementation of the feature toggle pattern.",
+  "description": "Core implementation of the feature toggle pattern.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
