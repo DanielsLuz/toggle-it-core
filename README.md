@@ -13,4 +13,4 @@ yarn add toggle-it-core
 
 ## Usage
 
-Simple example usages can be found at the [tests file](__tests__/toggle-it-core.test.js).
+Simple example usages can be found at the [tests file](https://github.com/DanielsLuz/toggle-it-core/blob/master/__tests__/toggle-it-core.test.js).

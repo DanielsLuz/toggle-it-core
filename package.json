@@ -1,6 +1,6 @@
 {
   "name": "toggle-it-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Core implementation of the feature toggle pattern.",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,13 @@
   },
   "author": "DanielsLuz <danielluz1995@gmail.com>",
   "repository": {
-    "url": "github.com/DanielsLuz/toggle-it-core",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/DanielsLuz/toggle-it-core.git"
   },
+  "keywords": ["feature-toggle", "core"],
   "license": "MIT",
   "private": false,
+  "homepage": "https://github.com/DanielsLuz/toggle-it-core#readme",
   "devDependencies": {
     "jest": "^22.4.3"
   }
