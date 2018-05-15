@@ -1,5 +1,18 @@
 const ToggleItCore = require('../index.js');
 
+describe('.setData', () => {
+  test('it changes data', () => {
+    const toggleIt = ToggleItCore({
+      options: { default: true }
+    });
+
+    toggleIt.setFeaturesData({
+      feature1: false,
+    });
+    expect(toggleIt.on('feature1')).toBe(false);
+  })
+})
+
 describe('.on', () => {
   test('returns true given a true feature', () => {
     const toggleIt = ToggleItCore({

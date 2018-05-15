@@ -1,11 +1,16 @@
 function ToggleItCore({ features = {}, options = { default: true } } = {}) {
+  let _features = features;
+
+  const setFeaturesData = (features) => {
+    _features = features;
+  }
 
   const on = (featureName, customCheck) => {
     if(typeof customCheck === "function") {
       return customCheck();
     } else {
-      if(features.hasOwnProperty(featureName)) {
-        return features[featureName];
+      if(_features.hasOwnProperty(featureName)) {
+        return _features[featureName];
       } else {
         return options.default;
       }
@@ -14,6 +19,7 @@ function ToggleItCore({ features = {}, options = { default: true } } = {}) {
 
   return {
     on,
+    setFeaturesData,
   }
 }
 
