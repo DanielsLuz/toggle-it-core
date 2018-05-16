@@ -73,5 +73,13 @@ describe('.on', () => {
       const someCustomFunction = (value) => !value;
       expect(toggleIt.on('feature1', someCustomFunction)).toBe(false);
     })
+
+    test('it only calls it if the feature flag exists', () => {
+      const toggleIt = ToggleItCore();
+
+      const someCustomFunction = jest.fn();
+      toggleIt.on('feature1', someCustomFunction)
+      expect(someCustomFunction).not.toBeCalled();
+    })
   });
 });

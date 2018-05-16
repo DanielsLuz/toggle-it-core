@@ -6,14 +6,14 @@ function ToggleItCore({ features = {}, options = { default: true } } = {}) {
   }
 
   const on = (featureName, customCheck) => {
-    if(typeof customCheck === "function") {
-      return customCheck(_features[featureName]);
-    } else {
-      if(_features.hasOwnProperty(featureName)) {
-        return _features[featureName];
+    if(_features.hasOwnProperty(featureName)) {
+      if(typeof customCheck === "function") {
+        return customCheck(_features[featureName]);
       } else {
-        return options.default;
+        return _features[featureName];
       }
+    } else {
+      return options.default;
     }
   }
 
