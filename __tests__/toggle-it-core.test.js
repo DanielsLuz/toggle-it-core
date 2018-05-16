@@ -37,7 +37,6 @@ describe('.on', () => {
   describe('given an unknown feature', () => {
     test('defaults to true', () => {
       const toggleIt = ToggleItCore();
-
       expect(toggleIt.on('unknownFeature')).toBe(true);
     });
 
@@ -52,19 +51,27 @@ describe('.on', () => {
     })
   })
 
-  describe('given a function', () => {
+  describe('given a custom function', () => {
     test('overrides the initial value', () => {
-
       const toggleIt = ToggleItCore({
         features: {
           feature1: false,
         }
       });
 
-      const someCustomFunction = () => {
-        return true;
-      }
+      const someCustomFunction = () => true;
       expect(toggleIt.on('feature1', someCustomFunction)).toBe(true);
+    })
+
+    test('it passes the feature flag value as parameter', () => {
+      const toggleIt = ToggleItCore({
+        features: {
+          feature1: true,
+        }
+      });
+
+      const someCustomFunction = (value) => !value;
+      expect(toggleIt.on('feature1', someCustomFunction)).toBe(false);
     })
   });
 });

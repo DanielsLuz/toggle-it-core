@@ -7,7 +7,7 @@ function ToggleItCore({ features = {}, options = { default: true } } = {}) {
 
   const on = (featureName, customCheck) => {
     if(typeof customCheck === "function") {
-      return customCheck();
+      return customCheck(_features[featureName]);
     } else {
       if(_features.hasOwnProperty(featureName)) {
         return _features[featureName];
